@@ -1,0 +1,36 @@
+graphs:
+  - name: graph
+    show: true
+    title: Things on fire - a plot by harry
+    header_row_number: 2
+    y-axis:
+      name: Radiant Heat Flux
+      sets:
+        - name: farts24
+          heading: "RAD DOWN_24"
+        - name: farts25
+          heading: "RAD DOWN_25"
+        - name: farts26
+          heading: "RAD DOWN_26"
+    x-axis:
+      name: Time in seconds
+      sets:
+        - name: Time
+          heading: "Time"
+  - name: graph-2nd file
+    title: Things on fire - a plot by harry number 2 plot
+    header_row_number: 2
+    y-axis:
+      name: Radiant Heat Flux
+      sets:
+        - name: farts24
+          heading: "RAD DOWN_20"
+        - name: farts25
+          heading: "RAD DOWN_21"
+        - name: farts26
+          heading: "RAD DOWN_23"
+    x-axis:
+      name: Time in seconds
+      sets:
+        - name: Time
+          heading: "Time"
