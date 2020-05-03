@@ -1,36 +1,33 @@
 graphs:
-  - name: graph
+  - name: double_incident_radiation
     show: true
-    title: Things on fire - a plot by harry
+    title: "Radiant Heat Flux Received at 2 m AFFL between Fires"
     header_row_number: 2
     y-axis:
-      name: Radiant Heat Flux
+      name: "Radiant Heat Flux (kW/m2)"
       sets:
-        - name: farts24
-          heading: "RAD DOWN_24"
-        - name: farts25
-          heading: "RAD DOWN_25"
-        - name: farts26
-          heading: "RAD DOWN_26"
+        - name: "0 m downstream"
+          heading: "RAD DOWN_00"
+        - name: "10 m downstream"
+          heading: "RAD DOWN_01"
+        - name: "20 m downstream"
+          heading: "RAD DOWN_02"
+        - name: "30 m downstream"
+          heading: "RAD DOWN_03"
+        - name: "40 m downstream"
+          heading: "RAD DOWN_04"
+        - name: "50 m downstream"
+          heading: "RAD DOWN_05"
+        - name: "110 m downstream"
+          heading: "RAD DOWN_11"
+        - name: "120 m downstream"
+          heading: "RAD DOWN_12"
+        - name: "130 m downstream"
+          heading: "RAD DOWN_13"
+        - name: "140 m downstream"
+          heading: "RAD DOWN_14"
     x-axis:
-      name: Time in seconds
-      sets:
-        - name: Time
-          heading: "Time"
-  - name: graph-2nd file
-    title: Things on fire - a plot by harry number 2 plot
-    header_row_number: 2
-    y-axis:
-      name: Radiant Heat Flux
-      sets:
-        - name: farts24
-          heading: "RAD DOWN_20"
-        - name: farts25
-          heading: "RAD DOWN_21"
-        - name: farts26
-          heading: "RAD DOWN_23"
-    x-axis:
-      name: Time in seconds
+      name: "Time (s)"
       sets:
         - name: Time
           heading: "Time"
