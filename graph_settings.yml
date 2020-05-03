@@ -1,33 +1,39 @@
-graphs:
-  - name: double_incident_radiation
-    show: true
-    title: "Radiant Heat Flux Received at 2 m AFFL between Fires"
-    header_row_number: 2
-    y-axis:
-      name: "Radiant Heat Flux (kW/m2)"
-      sets:
-        - name: "0 m downstream"
-          heading: "RAD DOWN_00"
-        - name: "10 m downstream"
-          heading: "RAD DOWN_01"
-        - name: "20 m downstream"
-          heading: "RAD DOWN_02"
-        - name: "30 m downstream"
-          heading: "RAD DOWN_03"
-        - name: "40 m downstream"
-          heading: "RAD DOWN_04"
-        - name: "50 m downstream"
-          heading: "RAD DOWN_05"
-        - name: "110 m downstream"
-          heading: "RAD DOWN_11"
-        - name: "120 m downstream"
-          heading: "RAD DOWN_12"
-        - name: "130 m downstream"
-          heading: "RAD DOWN_13"
-        - name: "140 m downstream"
-          heading: "RAD DOWN_14"
-    x-axis:
-      name: "Time (s)"
-      sets:
-        - name: Time
-          heading: "Time"
+# graphs:
+#   - name: double_incident_radiation_new
+#     type: rad
+#     show: true
+#     title: "Radiant Heat Flux Received at 2 m AFFL between Fires"
+#     column_prefix: "RAD DOWN_"
+#     column_suffix: [0,1,2,3,4,5,11,12,13,14]
+#   - name: double_incident_radiation_old
+#     show: true
+#     title: "Radiant Heat Flux Received at 2 m AFFL between Fires"
+#     header_row: 2
+#     y-axis:
+#       name: "Radiant Heat Flux (kW/m2)"
+#       sets:
+#         - name: "0 m downstream"
+#           heading: "RAD DOWN_00"
+#         - name: "10 m downstream"
+#           heading: "RAD DOWN_01"
+#         - name: "20 m downstream"
+#           heading: "RAD DOWN_02"
+#         - name: "30 m downstream"
+#           heading: "RAD DOWN_03"
+#         - name: "40 m downstream"
+#           heading: "RAD DOWN_04"
+#         - name: "50 m downstream"
+#           heading: "RAD DOWN_05"
+#         - name: "110 m downstream"
+#           heading: "RAD DOWN_11"
+#         - name: "120 m downstream"
+#           heading: "RAD DOWN_12"
+#         - name: "130 m downstream"
+#           heading: "RAD DOWN_13"
+#         - name: "140 m downstream"
+#           heading: "RAD DOWN_14"
+#     x-axis:
+#       name: "Time (s)"
+#       sets:
+#         - name: Time
+#           heading: "Time"

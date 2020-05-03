@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 
 import pandas as pd
 import yaml
+
+from graph_type_manager import from_template
 from graph import Graph
 
 def load_data(filename, header=1):
@@ -18,7 +20,7 @@ def load_graph_settings(filename="./graph_settings.yml"):
 def generate(data_path, output_path):
     data = load_data(data_path)
     settings = load_graph_settings()
-    for graph in [Graph.from_yaml(graph_data) for graph_data in settings['graphs'] ]:
+    for graph in [from_template(graph_data.get('type',None), graph_data) for graph_data in settings['graphs'] ]:
       x_axis = graph.x_axis['sets'][0]
 
       dataFrame = pd.DataFrame(data, columns=[x_axis['heading'], *graph.y_axis_columns()])
