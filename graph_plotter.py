@@ -18,23 +18,20 @@ def load_graph_settings(filename="./graph_settings.yml"):
 def generate(data_path, output_path):
     data = load_data(data_path)
     settings = load_graph_settings()
-    for graph in settings['graphs']:
-      graph_model = Graph(graph)
-      x_axis = graph_model.x_axis
+    for graph in [Graph.from_yaml(graph_data) for graph_data in settings['graphs'] ]:
+      x_axis = graph.x_axis['sets'][0]
 
-      y_axis_columns = [set['heading'] for set in graph_model.y_axes ]
-      df = pd.DataFrame(data, columns=[x_axis['heading'], *y_axis_columns])
+      dataFrame = pd.DataFrame(data, columns=[x_axis['heading'], *graph.y_axis_columns()])
 
-      # # Note that even in the OO-style, we use `.pyplot.figure` to create the figure.
-      fig, ax = plt.subplots()  # Create a figure and an axes.
-      for column in graph_model.y_axes:
-        ax.plot(df[x_axis['heading']], df[column['heading']], label=column['name'])  # Plot some data on the axes.
+      fig, ax = plt.subplots()
+      for column in graph.y_axis['sets']:
+        ax.plot(dataFrame[x_axis['heading']], dataFrame[column['heading']], label=column['name'])  # Plot some data on the axes.
 
-      ax.set_xlabel(graph['x-axis']['name'])  # Add an x-label to the axes.
-      ax.set_ylabel(graph['y-axis']['name'])  # Add a y-label to the axes.
-      ax.set_title(graph_model.title)  # Add a title to the axes.
-      ax.legend()  # Add a legend.
-      if 'show' in graph:
+      ax.set_xlabel(graph.x_axis['name'])
+      ax.set_ylabel(graph.y_axis['name'])
+      ax.set_title(graph.title)
+      ax.legend()
+      if graph.show:
         plt.show()
       fig.set_size_inches(18.5, 10.5)
-      fig.savefig(f"{output_path}{graph_model.filename}.png", bbox_inches='tight')
+      fig.savefig(f"{output_path}{graph.filename}.png", bbox_inches='tight')
